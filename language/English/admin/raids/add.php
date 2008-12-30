@@ -1,8 +1,13 @@
 <?php
-define("LAN_ADD_RAID_TITLE", "Add Raid");
-define("LAN_ADD_RAID_DATABASESELECT", "Select a database");
-define("LAN_ADD_RAID_DATABASESELECTERROR", "Please choose a database for this raid to be added to.");
-define("LAN_ADD_RAID_RAIDSTART", "Raid Start");
-define("LAN_ADD_RAID_RAIDEND", "Raid End");
-define("LAN_ADD_RAID_SUBMIT", "Submit Raid");
+$LANPREFIX = "LAN_ADD_RAID_";
+define("{$LANPREFIX}TITLE", "Add Raid");
+define("{$LANPREFIX}INFO_HEADING", "Raid Info");
+define("{$LANPREFIX}DATABASESELECT", "Select a database");
+define("{$LANPREFIX}DATABASESELECTERROR", "Please choose a database for this raid to be added to.");
+define("{$LANPREFIX}RAIDSTART", "Raid Start");
+define("{$LANPREFIX}RAIDEND", "Raid End");
+define("{$LANPREFIX}ZONE", "Raid Zone");
+define("{$LANPREFIX}PARTICIPANT_HEADING", "Raid Participants");
+define("{$LANPREFIX}PARTICIPANT", "Add Participant");
+define("{$LANPREFIX}SUBMIT", "Submit Raid");
 ?>

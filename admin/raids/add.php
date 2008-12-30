@@ -24,6 +24,7 @@ td.error-msg {
 $text .= "<div style=\"text-align: center;\">
 <h2>".LAN_ADD_RAID_TITLE."</h2>
 <form name=\"createraid\" method=\"post\" action=\"?action=create\" onsubmit=\"return checkForm();\">
+<h3>".LAN_ADD_RAID_INFO_HEADING."</h3>
 <table class=\"raid-form\">
 <tr><td><label for=\"database\">".LAN_ADD_RAID_DATABASESELECT."</label></td><td><select name=\"database\" id=\"database\"><option></option>";
 
@@ -77,6 +78,42 @@ foreach (Zone::fetchAll() as $zone) {
 $text .= "
 </select>
 </td><td id=\"raidzone-error\"></td></tr>
+</table>
+<h3>".LAN_ADD_RAID_PARTICIPANT_HEADING."</h3>
+<table class=\"raid-form\">
+<tr><td colspan=\"3\" style=\"text-align: center;\"><select id=\"raid-participants\" name=\"raid-participants\" size=\"10\"></select></td></tr>
+<tr><td>".LAN_ADD_RAID_PARTICIPANT."</td><td><input type=\"text\" id=\"new-raid-participant\"/></td><td><input type=\"button\" onclick=\"javascript: addParticipant();\" value=\"".LAN_ADMIN_COMMON_ADD."\"/></td></tr>
+</table>
+<script type=\"text/javascript\">
+function addParticipant() {
+	if (\$F('new-raid-participant') == \"\") {
+		alert('Please enter a name.');
+		return;
+	}
+	
+	var participantexists = false;
+	$('raid-participants').childElements().each(function (element) {
+		if (element.innerHTML == \$F('new-raid-participant')) {
+			participantexists = true;
+			return;
+		}
+	});
+	
+	if (participantexists) {
+		alert(\$F('new-raid-participant')+\" has already been added.\");
+		\$('new-raid-participant').value = \"\";
+		return;
+	}
+	
+	var newParticipant = document.createElement(\"option\");
+	newParticipant.innerHTML = \$F('new-raid-participant');
+	$('raid-participants').appendChild(newParticipant);
+	\$('new-raid-participant').value = \"\";
+}
+</script>
+<h3>".LAN_ADD_RAID_DKP_AWARDS."</h3>
+<table>
+	<tr><th>".LAN_ADD_RAID_DKP_AWARD_DESCRIPTION."</th><th>".LAN_ADD_RAID_DKP_AWARD_AMOUNT."</th><th></th></tr>
 </table>
 <input type=\"submit\" value=\"".LAN_ADD_RAID_SUBMIT."\"/>
 </form>

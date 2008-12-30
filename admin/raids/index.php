@@ -1,11 +1,12 @@
 <?php
-$raids = Raid::loadAll();
+$raidstable = new RaidsTable();
+$raids = $raidstable->fetchAll();
 
 global $ns;
 
 $text .= "<div style=\"text-align: center;\">
 <h2>".LAN_ADMIN_RAIDS_INDEX_TITLE."</h2>";
-if (count($raids)) {
+if ($raids->count()) {
 	$text .= "<table>
 	<tr><th>Raid Date</th><th>Raid Zone</th><th>Raid Start Time</th><th>Edit</th><th>Delete</th></tr>";
 	foreach ($raids as $raid) {

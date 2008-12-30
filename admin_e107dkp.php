@@ -1,5 +1,6 @@
 <?php
 require_once("../../class2.php");
+require_once("globals.php");
 
 if(!getperms("P")){ header("location:".e_BASE."index.php"); }
 require_once(e_ADMIN."auth.php");
@@ -54,5 +55,5 @@ $text .= "</div>";
 
 $ns->tablerender("<img src=\"images/icons/home-small.png\"/>&nbsp;&nbsp;Main Menu", $text);
 
-require_once(e_ADMIN."footer.php"); 
+require_once(e_ADMIN."footer.php");
 ?>

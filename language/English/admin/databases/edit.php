@@ -1,5 +1,7 @@
 <?php
-define("LAN_ADMIN_DATABASES_EDIT_TITLE", "Edit Database");
-define("LAN_ADMIN_DATABASES_EDIT_LABELNAME", "Database Name");
-define("LAN_ADMIN_DATABASES_EDIT_SUBMIT", "Update Database");
+$LANPREFIX = "LAN_ADMIN_DATABASES_EDIT_";
+define("{$LANPREFIX}TITLE", "Edit Database");
+define("{$LANPREFIX}LABELNAME", "Database Name");
+define("{$LANPREFIX}SUBMIT", "Update Database");
+define("{$LANPREFIX}DATABASEDOESNOTEXIST", "That database does not exist");
 ?>

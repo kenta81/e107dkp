@@ -1,18 +1,19 @@
 <?php
 global $ns;
 
-$databases = Database::fetchAll();
+$databasetable = new DatabasesTable();
+$databases = $databasetable->fetchAll();
 
 $text = "<h2>".LAN_ADMIN_DATABASES_INDEX_TITLE."</h2>";
 
-if (count($databases))
+if ($databases->count())
 {
 	$text .= "
 <table>
 <tr><th>".LAN_ADMIN_DATABASES_INDEX_THDATABASENAME."</th><th>".LAN_ADMIN_COMMON_EDIT."</th><th>".LAN_ADMIN_COMMON_DELETE."</th></tr>";
 
 foreach ($databases as $database) {
-	$text .= "<tr><td>".$database->getName()."</td><td><a href=\"".e_SELF."?action=edit&id=".$database->getId()."\"/>".LAN_ADMIN_COMMON_EDIT."</a></td><td><a href=\"".e_SELF."?action=delete&id=".$database->getId()."\" onclick=\"javascript: return confirm('".LAN_ADMIN_DATABASES_INDEX_CONFIRMDELETE."');\">".LAN_ADMIN_COMMON_DELETE."</a></td></tr>";
+	$text .= "<tr><td>".$database->name."</td><td><a href=\"".e_SELF."?action=edit&id=".$database->id."\"/>".LAN_ADMIN_COMMON_EDIT."</a></td><td><a href=\"".e_SELF."?action=delete&id=".$database->id."\" onclick=\"javascript: return confirm('".LAN_ADMIN_DATABASES_INDEX_CONFIRMDELETE."');\">".LAN_ADMIN_COMMON_DELETE."</a></td></tr>";
 }
 
 $text .= "</table>";

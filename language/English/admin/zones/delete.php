@@ -1,0 +1,3 @@
+<?php
+$LANPREFIX = "LAN_ADMIN_ZONES_DELETE_";
+?>

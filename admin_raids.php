@@ -2,10 +2,7 @@
 require_once("../../class2.php");
 if(!getperms("P")){ header("location:".e_BASE."index.php"); }
 require_once(e_ADMIN."auth.php");
-
-require_once(e_PLUGIN."e107dkp/includes/models/Database.php");
-require_once(e_PLUGIN."e107dkp/includes/models/Raid.php");
-require_once(e_PLUGIN."e107dkp/includes/models/Zone.php");
+require_once(e_PLUGIN."e107dkp/globals.php");
 
 if (isset($_GET['action']) && $_GET['action'] != '')
 	$action = $_GET['action'];

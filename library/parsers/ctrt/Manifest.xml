@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<parser xmlns="http://schemas.codexscape.com/e107dkp/parsermanifest.xsd">
+	<name>CT Raid Tracker Parser</name>
+	<internalname>ctrt</internalname>
+	<author>cuscus1986</author>
+</parser>
